@@ -99,6 +99,7 @@ class DetailPage extends StatelessWidget {
                           ),
                         ),
                       ),
+                      SizedBox(height: 20),
                       FoodsList(foods: restaurant.foods),
                       SizedBox(height: 20),
                       Container(
@@ -106,7 +107,6 @@ class DetailPage extends StatelessWidget {
                         decoration: BoxDecoration(
                           border: _bottomBorder()
                         ),
-
                         child: Text(
                           'Drinks',
                           style: Theme.of(context).textTheme.headline5!.copyWith(
@@ -114,6 +114,7 @@ class DetailPage extends StatelessWidget {
                           ),
                         ),
                       ),
+		      SizedBox(height: 20),
                       DrinksList(drinks: restaurant.drinks),
                       SizedBox(height: 10),
                     ],
