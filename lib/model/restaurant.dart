@@ -18,10 +18,10 @@ class Restaurant {
   });
 
   factory Restaurant.fromJson(Map<String, dynamic> object) {
-    List<String> foods = [];
-    List<String> drinks = [];
-    object['menus']['foods'].forEach((food) => foods.add(food['name']));
-    object['menus']['drinks'].forEach((drink) => drinks.add(drink['name']));
+    // List<String> foods = [];
+    // List<String> drinks = [];
+    // object['menus']['foods'].forEach((food) => foods.add(food['name']));
+    // object['menus']['drinks'].forEach((drink) => drinks.add(drink['name']));
 
     return Restaurant(
       id : object['id'],
@@ -30,17 +30,17 @@ class Restaurant {
       pictureId : object['pictureId'],
       city : object['city'],
       rating : object['rating'],
-      foods: foods,
-      drinks: drinks,
+      foods: List.from(object['menus']['foods'].map((food) => food['name'])),
+      drinks: List.from(object['menus']['drinks'].map((drink) => drink['name'])),
     );
   }  
 }
 
 List<Restaurant> getRestaurant(String? json) {
-    if (json == null) {
-      return [];
-    }
-
-    final List parsed = (jsonDecode(json) as Map<String, dynamic>)['restaurants'];
-    return parsed.map((restaurant) => Restaurant.fromJson(restaurant)).toList();
+  if (json == null) {
+    return [];
   }
+
+  final List parsed = (jsonDecode(json) as Map<String, dynamic>)['restaurants'];
+  return parsed.map((restaurant) => Restaurant.fromJson(restaurant)).toList();
+}

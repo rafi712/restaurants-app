@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class HeaderImage extends StatelessWidget {
-  final String pictureUrl;
-  const HeaderImage({required this.pictureUrl});
+  final String pictureUrl, id;
+  const HeaderImage({required this.pictureUrl, required this.id});
 
 
   @override
@@ -19,13 +19,22 @@ class HeaderImage extends StatelessWidget {
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(20),
           bottomRight: Radius.circular(20),
-        ),
-        image: DecorationImage(
-          fit: BoxFit.cover,
-          image: NetworkImage(pictureUrl)
-        ),
+        ),        
       ),
       height: 270,
+      child: Hero(
+        tag: id,
+        child: ClipRRect(
+          borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(20),
+          bottomRight: Radius.circular(20),
+        ),
+          child: Image.network(
+            pictureUrl,
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
     );
   }
 }

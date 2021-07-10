@@ -30,7 +30,7 @@ class DetailPage extends StatelessWidget {
           SingleChildScrollView(
             child: Column(              
               children: [
-                HeaderImage(pictureUrl: restaurant.pictureId),
+                HeaderImage(pictureUrl: restaurant.pictureId, id: restaurant.id),
                 SizedBox(height: 20),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -114,7 +114,7 @@ class DetailPage extends StatelessWidget {
                           ),
                         ),
                       ),
-		      SizedBox(height: 20),
+		                  SizedBox(height: 20),
                       DrinksList(drinks: restaurant.drinks),
                       SizedBox(height: 10),
                     ],

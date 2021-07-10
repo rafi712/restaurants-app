@@ -44,9 +44,12 @@ class RestaurantsList extends StatelessWidget {
                             )
                           ]
                         ),
-                        child: Image.network(
-                          restaurants[index].pictureId,
-                          fit: BoxFit.cover,
+                        child: Hero(
+                          tag: restaurants[index].id,
+                          child: Image.network(
+                            restaurants[index].pictureId,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                       SizedBox(height: 15),
