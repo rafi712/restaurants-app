@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:restaurants_app/pages/search/search_page.dart';
 
-import 'widgets/restaurants_list.dart';
-// import 'widgets/search_input.dart';
+import 'package:restaurants_app/pages/home/widgets/restaurants_list.dart';
 
 class HomePage extends StatelessWidget {
   static String routeName = '/';
@@ -58,7 +57,6 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 20),
-                // SearchInput(),
                 SizedBox(height: 30),
                 RestaurantsList(),
               ],
