@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:restaurants_app/pages/search/search_page.dart';
 
-import 'components/restaurants_list.dart';
-import 'components/search_input.dart';
+import 'widgets/restaurants_list.dart';
+// import 'widgets/search_input.dart';
 
 class HomePage extends StatelessWidget {
-  static String routeName = '/home';
+  static String routeName = '/';
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +21,17 @@ class HomePage extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 15, top: 35, bottom: 15),
                   child: Row(
                     children: [
-                      Icon(Icons.place_outlined),
+                      Icon(
+                        Icons.place_outlined,
+                        color: Colors.red[600],
+                        size: 26,
+                      ),
+                      SizedBox(width: 5),
                       Text(
                         'Indonesia',
-                        style: Theme.of(context).textTheme.subtitle1,
+                        style: TextStyle(
+                          fontSize: 16
+                        ),
                       ),
                     ],
                   ),
@@ -50,7 +58,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 20),
-                SearchInput(),
+                // SearchInput(),
                 SizedBox(height: 30),
                 RestaurantsList(),
               ],
@@ -58,6 +66,13 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushNamed(context, SearchPage.routeName);
+        },
+        child: Icon(Icons.search_rounded, size:28),
+        backgroundColor: Colors.yellow[800],
+      )
     );
   }
 }

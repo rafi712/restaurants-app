@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class RatingStars extends StatelessWidget {
-  final num rating;
+  final double rating;
   const RatingStars({required this.rating});
 
   Icon buildStar(int index) {

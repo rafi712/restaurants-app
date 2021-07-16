@@ -1,4 +1,4 @@
-name: news_app
+name: restaurants_app
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -24,12 +24,18 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  flutter_native_splash: ^1.2.0
+  fancy_shimmer_image: ^2.0.0+1
   google_fonts: ^2.1.0
+  http: ^0.13.3
+  internet_connection_checker: ^0.0.1+1
+  lottie: ^1.1.0
+  provider: ^5.0.0
+  shimmer: ^2.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_native_splash: ^1.2.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -42,9 +48,12 @@ flutter:
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/local_restaurant.json
-    - assets/foods.jpg
-    - assets/drinks.jpg
+    - assets/images/foods.jpg
+    - assets/images/drinks.jpg
+    - assets/lottie/no-connection.json
+    - assets/lottie/not-found.json
+    - assets/lottie/location.json
+    - assets/lottie/search.json
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -69,10 +78,9 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
-
 flutter_native_splash:
   color: "#fdd835"
-  image: assets/restaurant_splash.png
+  image: assets/images/restaurant_splash.png
   android_gravity: center
   ios_content_mode: center
   fullscreen: true

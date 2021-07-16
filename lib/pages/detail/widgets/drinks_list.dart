@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 
-class FoodsList extends StatelessWidget {
-  final List<String> foods;
-  const FoodsList({required this.foods});
+class DrinksList extends StatelessWidget {
+  final List<String> drinks;
+  const DrinksList({required this.drinks});
+
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
-      itemCount: foods.length,
+      itemCount: drinks.length,
       itemBuilder: (context, index) => Container(
         height: 90,
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              margin: EdgeInsets.only(right: 20, bottom: 15),
+              margin: EdgeInsets.only(right: 20, bottom: 15),             
               height: 90,
               width: 90,
               decoration: BoxDecoration(
@@ -29,32 +29,31 @@ class FoodsList extends StatelessWidget {
                   )
                 ],
                 image: DecorationImage(
-                  image: AssetImage('assets/foods.jpg'),
+                  image: AssetImage('assets/images/drinks.jpg'),
                   fit: BoxFit.cover
                 ),
               ),
             ),
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Flexible(
-                  child: Text(
-                    foods[index],
+            Container(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    drinks[index],
                     style: TextStyle(
                       fontSize: 17
                     ),
                   ),
-                ),
-                SizedBox(height: 10,),
-                Text(
-                  'Rp10.000',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.grey[600]
-                  ),
-                )
-              ],
+                  SizedBox(height: 10,),
+                  Text(
+                    'Rp10.000',
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.grey[600]
+                    ),
+                  )
+                ],
+              ),
             )
           ],
         ),
